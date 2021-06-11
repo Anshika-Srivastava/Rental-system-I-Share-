@@ -4,7 +4,7 @@ Frontend :
 
 - E-commerce Intro Page
   - About I-Share
-  - Fresh Recomendations
+  - Fresh Recomendation
 - Product Page
 - Login Page
 - Registration Page
@@ -12,5 +12,8 @@ Frontend :
 - Admin Dashboard
   - Recently ordered
   - Wishlist
-    Backend :
+
+
+Backend :
 - Auth
+
