@@ -1,23 +1,35 @@
-const express = require('express');
-const cors = require('cors');
-const PORT = process.env.PORT || 3001;
+import express from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-const app = express();
-const Server = require('http').createServer(app);
-
-// const productRoutes = require('./routes/products.js');
+import productRoutes from './routes/products.js';
 // const userRoutes = require('./routes/user.js');
 
+dotenv.config();
+
+const PORT = process.env.PORT || 5010;
+
+mongoose
+    .connect(process.env.CONNECTION_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() =>
+        app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
+    )
+    .catch((error) => console.log(error.message));
+
+mongoose.set('useFindAndModify', false);
+
+const app = express();
 
 app.use(cors());
 app.use(express.json({ extended: false }));
 
-
-// app.use('/products', productRoutes);
-// app.use('/user', userRoutes);
-
 app.get('/', (req, res) => {
     res.send('Server Started!');
-})
+});
 
-Server.listen(PORT, () => console.log(`on port ${PORT}`));
+app.use('/products', productRoutes);
+// app.use('/user', userRoutes);
