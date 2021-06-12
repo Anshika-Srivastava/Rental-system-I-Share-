@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
 import productRoutes from './routes/products.js';
-// const userRoutes = require('./routes/user.js');
+import userRoutes from './routes/user.js';
 
 dotenv.config();
 
@@ -32,4 +32,4 @@ app.get('/', (req, res) => {
 });
 
 app.use('/products', productRoutes);
-// app.use('/user', userRoutes);
+app.use('/user', userRoutes);
