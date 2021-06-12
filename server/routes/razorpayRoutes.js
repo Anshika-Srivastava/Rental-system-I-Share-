@@ -1,6 +1,6 @@
 import express from 'express';
-import request from 'request';
 import Razorpay from 'razorpay';
+import request from 'request';
 const router = express.Router();
 
 const keys = {
@@ -30,22 +30,31 @@ router.get('/order', (req, res) => {
     }
 })
 
-router.post('/capture/:paymentId', (req, res) => {
+router.post("/capture/:paymentId", (req, res) => {
     try {
-        return request({
-            method: 'POST',
-            url: `https://${keys.razorIdKey}:${keys.razorpaySecret}@api.razorpay.com/v1/payments/${req.params.paymentId}/capture`,
-            form: {
-                amount: 10 * 100,
-                currency: "INR"
+        return request(
+            {
+                method: "POST",
+                url: `https://${keys.razorIdkey}:${keys.razorIdSecret}@api.razorpay.com/v1/payments/${req.params.paymentId}/capture`,
+                form: {
+                    amount: 10 * 100,
+                    currency: "INR"
+                },
             },
-        }, async (err, response, body) => {
-            if (err) return res.status(500).json({ message: "Payment Does Not Processed!" });
-            return res.status(200).json(body);
-        }
+            async (err, response, body) => {
+                if (err) {
+                    return res.status(500).json({
+                        message: "Something error!s"
+                    })
+                }
+                return res.status(200).json(body)
+            }
         )
-    } catch (err) {
-        res.status(404).json({ message: error.message })
+    }
+    catch (err) {
+        return res.status(404).json({
+            message: err.message
+        })
     }
 })
 
