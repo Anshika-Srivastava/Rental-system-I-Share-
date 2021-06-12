@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 
 import productRoutes from './routes/products.js';
 import userRoutes from './routes/user.js';
+import razorpayRoutes from './routes/razorpayRoutes.js';
 
 dotenv.config();
 
@@ -33,3 +34,4 @@ app.get('/', (req, res) => {
 
 app.use('/products', productRoutes);
 app.use('/user', userRoutes);
+app.use('/razorpay', razorpayRoutes)
