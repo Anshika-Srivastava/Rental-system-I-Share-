@@ -1,51 +1,95 @@
-// import mongoose from 'mongoose';
-// import Product from '../models/ProductSchema'
+import mongoose from 'mongoose';
+import Product from '../models/ProductSchema.js';
 
-export const getProducts = async (req, res) => {
+//Get all products
+export const getAllProducts = async (req, res) => {
     const { data } = req.body;
     try {
-        const products = await Product.find({ name: data });
+        const products = await Product.find();
         res.status(200).json(products);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
 };
 
-export const postProducts = async (req, res) => {
-    const { name, description, rentalPrice, category } = req.body;
+//Get productById
+export const getProductById = async (req, res) => {
+    const { id } = req.params;
     try {
-        let product = await Product.findOne({ name });
-        if (product) return res.status(203).json({ message: "Product Exists." });
-        product = new Product({
+        const product = await Product.findOne({ _id: id });
+        res.status(200).json(product);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+};
+
+//creates new product
+export const createProduct = async (req, res) => {
+    const { name, description, ownerId, image, rentalPrice, category } =
+        req.body;
+    try {
+        let product = new Product({
             name,
             description,
+            image,
             rentalPrice,
-            category
+            category,
+            ownerId,
         });
         await product.save();
         res.status(200).json(product);
     } catch (error) {
-        res.status(404).json({ message: error.message })
+        res.status(404).json({ message: error.message });
     }
 };
 
-export const getProductsByFilter = async (req, res) => {
-    const category = req.body;
-    try {
-        let products = await Product.find({ category });
-        res.status(200).json(products);
-    } catch (error) {
-        res.status(404).json({ message: error.message })
-    }
-}
+//deletes a product
+export const deleteProduct = async (req, res) => {
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id))
+        return res.status(404).send(`No product with id: ${id}`);
 
-export const deleteProducts = async (req, res) => {
-    const name = req.body;
-    try {
-        let products = await Product.findOneandRemove({ name });
-        res.status(200).json({ message: "Product Removed Successfully!" });
-    } catch (error) {
-        res.status(404).json({ message: error.message })
-    }
-}
+    await Product.findByIdAndRemove(id);
 
+    res.json({ message: 'Product Deleted Successfully' });
+};
+
+//Updates a product
+export const updateProduct = async (req, res) => {
+    const { id } = req.params;
+    const {
+        name,
+        description,
+        ownerId,
+        image,
+        rentalPrice,
+        category,
+        rentedByUser,
+    } = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(id))
+        return res.status(404).send(`No product with id: ${id}`);
+
+    try {
+        const updatedOne = await Product.findByIdAndUpdate(
+            id,
+            {
+                name,
+                description,
+                image,
+                rentalPrice,
+                category,
+                ownerId,
+                rentedByUser,
+                _id: id,
+            },
+            {
+                new: true,
+            }
+        );
+
+        res.status(200).json(updatedOne);
+    } catch (error) {
+        res.status(409).json({ message: error.message });
+    }
+};
