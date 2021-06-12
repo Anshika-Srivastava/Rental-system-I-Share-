@@ -26,7 +26,7 @@ const Support = (props) => {
         </div>
       </div>
       <div className="col-md-4">
-        <div className="card bg-success">
+        <div className="card bg-warning">
           <div className="card-body text-white">
             <span className="p-3 bg-light rounded-circle mr-3 text-dark">
               <IconTruck className="display-6" />

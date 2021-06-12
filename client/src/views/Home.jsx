@@ -1,4 +1,5 @@
 import React, { lazy, Component } from "react";
+import { ReactComponent as IconStopwatch } from "bootstrap-icons/icons/stopwatch.svg";
 import { Link } from "react-router-dom";
 // import { link45, file, check2all } from "../npm/icon";
 import { data } from "../data";
@@ -75,7 +76,6 @@ class HomeView extends Component {
               <Support />
             </div>
             <div className="col-md-3">
-              <CardLogin className="mb-3" />
               <CardImage src="../../images/banner/Watches.webp" to="promo" />
             </div>
           </div>
@@ -96,49 +96,53 @@ class HomeView extends Component {
           </div>
         </div>
 
-        <div className="bg-info bg-gradient p-3 text-center mb-3">
-          <h4 className="m-0">Explore Fashion Collection</h4>
+        <div className="bg-warning bg-gradient p-3 text-center mb-3">
+          <h4 className="m-0">New Arrivals! Hurry! <IconStopwatch className="text-primary" /></h4>
         </div>
         <div className="container">
           <div className="row">
             <div className="col-md-3">
               <Link to="/" className="text-decoration-none">
                 <img
-                  src="../../images/category/male.webp"
+                  src="https://images.unsplash.com/photo-1614755192999-b8ecede15458?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
                   className="img-fluid rounded-circle"
                   alt="..."
                 />
-                <div className="text-center h6">Men's Clothing</div>
+                <br></br>
+                <div className="text-center h6">Electronics</div>
               </Link>
             </div>
             <div className="col-md-3">
               <Link to="/" className="text-decoration-none">
                 <img
-                  src="../../images/category/female.webp"
+                  src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZnVybml0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
                   className="img-fluid rounded-circle"
                   alt="..."
                 />
-                <div className="text-center h6">Women's Clothing</div>
+                <br></br>
+                <div className="text-center h6">Furniture</div>
               </Link>
             </div>
             <div className="col-md-3">
               <Link to="/" className="text-decoration-none">
                 <img
-                  src="../../images/category/smartwatch.webp"
+                  src="../../images/category/Books1.jpg"
                   className="img-fluid rounded-circle"
                   alt="..."
                 />
-                <div className="text-center h6">Smartwatch</div>
+                <br></br>
+                <div className="text-center h6">Books</div>
               </Link>
             </div>
             <div className="col-md-3">
               <Link to="/" className="text-decoration-none">
                 <img
-                  src="../../images/category/footwear.webp"
+                  src="../../images/category/Lappy1.jpg"
                   className="img-fluid rounded-circle"
                   alt="..."
                 />
-                <div className="text-center h6">Footwear</div>
+                <br></br>
+                <div className="text-center h6">Laptops</div>
               </Link>
             </div>
           </div>
