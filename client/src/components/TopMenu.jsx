@@ -7,7 +7,7 @@ const TopMenu = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-0">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            E-Commerce
+            I-SHARE
           </Link>
           <button
             className="navbar-toggler"
@@ -82,12 +82,7 @@ const TopMenu = () => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/category">
-                  Fashion
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/category">
-                  Supermarket
+                  Furniture
                 </Link>
               </li>
               <li className="nav-item">
@@ -97,22 +92,7 @@ const TopMenu = () => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/category">
-                  Furniture
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/category">
-                  Garden & Outdoors
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/category">
-                  Jewellery
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/documentation">
-                  Documentation
+                  Books
                 </Link>
               </li>
             </ul>

@@ -63,19 +63,24 @@ const Footer = () => {
         <div className="container-fluid bg-dark text-white">
           <div className="row ">
             <div className="col-md-3 py-3">
-              <div className="h6">Company Name</div>
+              <div className="h6">I-SHARE</div>
               <hr />
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                We provide two way rental services to our clients. You can always earn your pocket money or that extra expenditure by renting out something that you have not been using since long. Also, someone can take on rent your pre-loved goods and adorn their homes.
               </p>
             </div>
             <div className="col-md-3 py-3">
               <div className="h6">Products</div>
               <hr />
               <ul className="list-group list-group-flush">
+                <li className="list-group-item bg-dark text-white border-light">
+                  <Link
+                    to="/"
+                    className="text-decoration-none text-white stretched-link"
+                  >
+                    Furniture
+                  </Link>
+                </li>
                 <li className="list-group-item bg-dark text-white border-light">
                   <Link
                     to="/"
@@ -89,31 +94,7 @@ const Footer = () => {
                     to="/"
                     className="text-decoration-none text-white stretched-link"
                   >
-                    Mobiles
-                  </Link>
-                </li>
-                <li className="list-group-item bg-dark text-white border-light">
-                  <Link
-                    to="/"
-                    className="text-decoration-none text-white stretched-link"
-                  >
-                    Car & bike
-                  </Link>
-                </li>
-                <li className="list-group-item bg-dark text-white border-light">
-                  <Link
-                    to="/"
-                    className="text-decoration-none text-white stretched-link"
-                  >
-                    Super Market
-                  </Link>
-                </li>
-                <li className="list-group-item bg-dark text-white border-light">
-                  <Link
-                    to="/"
-                    className="text-decoration-none text-white stretched-link"
-                  >
-                    Travel Cards
+                    Books
                   </Link>
                 </li>
               </ul>
@@ -168,11 +149,11 @@ const Footer = () => {
               <div className="h6">Address</div>
               <hr />
               <address>
-                <strong>Twitter, Inc.</strong>
+                <strong>I-SHARE</strong>
                 <br />
-                1355 Market St, Suite 900
+                D-34, First Floor, Amar Prem Building, Rajajipuram,
                 <br />
-                San Francisco, CA 94103
+                Lucknow, Uttar Pradesh 226017
                 <br />
                 <abbr title="Phone">P:</abbr> (123) 456-7890
               </address>
@@ -180,7 +161,7 @@ const Footer = () => {
               <hr />
               <IconTelephone /> +1800 100 1000
               <br />
-              <IconEnvelope /> info@email.com
+              <IconEnvelope /> i_share@email.com
             </div>
           </div>
         </div>
@@ -202,7 +183,7 @@ const Footer = () => {
               </Link>
             </div>
             <div className="col-md-3 py-2">
-              © 2009-{new Date().getFullYear()} React-E-Commerce.com
+              © 2020-{new Date().getFullYear()} I_SHARE.com
             </div>
             <div className="col-md-3 py-2 bg-white">
               <img
