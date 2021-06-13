@@ -1,0 +1,11 @@
+export const USER_REGISTER = "USER_REGISTER";
+export const USER_LOGIN = "USER_LOGIN";
+export const GET_USER = "GET_USER";
+export const USER_LOGOUT = "USER_LOGOUT";
+export const SET_ERRORS = "SET_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const GET_ALL_PRODUCTS = "GET_ALL_PRODUCTS";
+export const SET_PRODUCT = "SET_PRODUCT";
+export const CREATE_PRODUCT = "CREATE_PRODUCT";
+export const DELETE_PRODUCT = "DELETE_PRODUCT";
+export const SET_ERROR = "SET_ERROR";
